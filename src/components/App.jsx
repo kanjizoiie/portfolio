@@ -1,29 +1,34 @@
 import React, { Component } from 'react';
+import News from './news/News.jsx';
 import './App.scss';
 
 class App extends Component {
     constructor(props) {
         super(props);
-        this.state = {
-            text: ''
-        };
-        this.setText = this.setText.bind(this);
     }
-
-    setText(event) {
-        this.setState({
-            text: event.target.value 
-        });
-    }
-    
     render() {
         return (
-            <div>
-                <form>
-                    <input type="text" onChange = { this.setText }/>
-                    { this.state.text }
-                </form>
-            </div>
+            <News posts = {[{
+                title: 'Woo',
+                text: 'THIS IS WORKING',
+                link: 'NOTHING WILL BREAK ME',
+                date: 'PropTypes.string'
+            },{
+                title: 'Well, this was amazing',
+                text: 'THIS IS WORKING',
+                link: 'NOTHING WILL BREAK ME',
+                date: 'PropTypes.string'
+            },{
+                title: 'Nothing is as strong as this.',
+                text: 'THIS IS WORKING',
+                link: 'NOTHING WILL BREAK ME',
+                date: 'PropTypes.string'
+            },{
+                title: 'I used to clean my toilet, but when I saw THIS i changed my mind.',
+                text: 'THIS IS WORKING',
+                link: 'NOTHING WILL BREAK ME',
+                date: 'PropTypes.string'
+            }]} />
         );
     }
 }

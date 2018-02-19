@@ -1,0 +1,28 @@
+$font-stack: Helvetica, sans-serif;
+@import '../../colors';
+
+.post > * {
+    display: block;
+}
+.post > hr {
+
+}
+
+post-title {
+    font: 150% $font-stack;
+    color: $post-title;
+}
+
+post-text {
+    font: 100% $font-stack;
+    color: $post-text;
+    margin: 1em 0 1em 0;
+}
+
+.post {
+    display: block;
+    padding: 1em;
+    border: solid 1px $post-border;
+    border-radius: 1em;
+    margin: 1em 0 1em 0;
+}
