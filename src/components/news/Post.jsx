@@ -7,10 +7,10 @@ class Post extends Component {
         return (
             <div className='post'>
                 <post-title>{ this.props.title }</post-title>
-                <post-text>{ this.props.text }</post-text>
+                <post-text>{ this.props.content }</post-text>
                 <hr />
-                <post-link><a href = { this.props.link } >Read More</a></post-link>
-                <post-date>{ this.props.date }</post-date>
+                <post-link><a href = { this.props.id } >Read More</a></post-link>
+                <post-date>Posted: { this.props.date }</post-date>
             </div>
         );
     }
@@ -18,8 +18,8 @@ class Post extends Component {
 
 Post.propTypes = {
     title: PropTypes.string,
-    text: PropTypes.string,
-    link: PropTypes.string,
+    content: PropTypes.string,
+    id: PropTypes.string,
     date: PropTypes.string
 };
 

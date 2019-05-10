@@ -5,24 +5,30 @@ const HTMLWebpackPluginConfig = new HTMLWebpackPlugin({
     filename: 'index.html',
     inject: 'body'
 });
-const parentDir = path.join(__dirname, '../');
 
+
+const parentDir = path.join(__dirname, '../');
 module.exports = {
-    entry: [
-        path.join(__dirname, '/src/index.js')
-    ],
+    entry: {
+        'bundle.js': [
+            path.join(__dirname, '/src/index.js')
+        ]
+    },
     output: {
         path: path.resolve('dist'),
         filename: 'bundle.js'
     },
     module: {
-        loaders: [{
+        rules: [{
             test: /\.(jsx|js)$/,
-            loader: 'babel-loader',
+            use: 'babel-loader',
             exclude: /node_modules/
         }, {
             test: /\.(scss|sass)$/,
-            loaders: ['style-loader', 'css-loader', 'sass-loader']
+            use: ['style-loader', 'css-loader', 'sass-loader']
+        }, {
+            test: /\.(css)$/,
+            use: ['style-loader', 'css-loader', ]
         }],
     },
     devServer: {
