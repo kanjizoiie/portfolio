@@ -9,6 +9,7 @@ class Help extends Component {
         return (
             <div>
                 <h1>Help</h1>
+                <h2>This page will display some helpful text</h2>
             </div>
         );
     }

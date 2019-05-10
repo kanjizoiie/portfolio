@@ -4,6 +4,7 @@ import { Route, Switch } from 'react-router-dom';
 import News from './components/news/News.jsx';
 import Help from './components/help/Help.jsx';
 import NotFound from './components/notfound/NotFound.jsx';
+import Menu from './components/menu/Menu.jsx';
 
 import './App.scss';
 import './css/skeleton.css';
@@ -15,6 +16,7 @@ class App extends Component {
     render() {
         return (
             <div className = 'container'>
+                <Menu />
                 <Switch>
                     <Route default exact path = '/' component = { Help } />
                     <Route path = '/news' component = { News } />
