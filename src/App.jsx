@@ -6,6 +6,8 @@ import Help from './components/help/Help.jsx';
 import NotFound from './components/notfound/NotFound.jsx';
 import Menu from './components/menu/Menu.jsx';
 
+import NewsJson from './json/news.json';
+
 import './App.scss';
 import './css/skeleton.css';
 
@@ -13,15 +15,18 @@ class App extends Component {
     constructor(props) {
         super(props);
     }
+
     render() {
         return (
-            <div className = 'container'>
+            <div className = 'wrapper'>            
                 <Menu />
-                <Switch>
-                    <Route default exact path = '/' component = { Help } />
-                    <Route path = '/news' component = { News } />
-                    <Route component = { NotFound } />
-                </Switch>
+                <div className = 'container'>
+                    <Switch>
+                        <Route default exact path = '/' render = { () => <Help /> } />
+                        <Route path = '/news' render = { () => <News posts = { NewsJson.posts } /> } />
+                        <Route render = { () => <NotFound /> } />
+                    </Switch>
+                </div>
             </div>
         );
     }
