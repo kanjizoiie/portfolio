@@ -9,7 +9,10 @@ class Menu extends Component {
     
     render() {
         return (
-            <div>Menu</div>
+            <nav>
+                <div>Heloo</div>
+                <div>test</div>
+            </nav>
         );
     }
 }

@@ -1,0 +1,62 @@
+@import "./Colors.scss";
+
+body {
+    background: $background;
+}
+
+body, html {
+    padding: 0;
+    margin: 0;
+}
+
+a, h1, h2, h3, h4 {
+    color: $first;
+}
+
+p, h5, h6, h7 {
+    color: $second;
+}
+
+nav {
+    background: $fourth;
+    padding: 0;
+    margin: 0;
+    display: flex;
+}
+
+nav > * {
+    flex: 1;
+    color: $second;
+}
+
+.newsSection {
+    margin: 1em 0 0 0;
+    padding: 0;
+    display: flex;
+}
+
+.newsSection > .post {
+    border: 1px solid black;
+    margin: 0.25%;
+    padding: 0.25em;
+}
+
+.newsSection > * {
+    width: 32.5%;
+    max-height: 20em;
+}
+
+.button-first {
+    background: $first;
+}
+
+@media (max-width: 400px) {
+    nav {
+        display: block;
+    }
+    .newsSection {
+        display: block;
+    }
+}
+
+

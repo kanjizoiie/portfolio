@@ -6,11 +6,10 @@ class Post extends Component {
     render() {
         return (
             <div className='post'>
-                <post-title>{ this.props.title }</post-title>
-                <post-text>{ this.props.content }</post-text>
-                <hr />
-                <post-link><a href = { this.props.id } >Read More</a></post-link>
-                <post-date>Posted: { this.props.date }</post-date>
+                <h5>{ this.props.title }</h5>
+                <p>{ this.props.content }</p>
+                <button className='button-first'>Read More</button>
+                <div>Posted: { this.props.date }</div>
             </div>
         );
     }

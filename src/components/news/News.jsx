@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import PropTypes from 'prop-types';
 import Post from './Post.jsx';
 
 class News extends Component {
@@ -10,9 +9,10 @@ class News extends Component {
         };
     }
     render() {
+        console.log(this.state.posts);
         return (
             <section className = 'newsSection'>
-                { this.state.posts && this.state.posts.isArray() ? this.state.posts.map((comp, i) => 
+                { this.state.posts ? this.state.posts.map((comp, i) => 
                     <Post
                         key = { i }
                         title = { comp.title } 
@@ -25,14 +25,5 @@ class News extends Component {
         );
     }
 }
-
-News.propTypes = {
-    posts: PropTypes.arrayOf(PropTypes.shape({
-        title: PropTypes.string,
-        text: PropTypes.string,
-        id: PropTypes.string,
-        date: PropTypes.string
-    }))
-};
 
 export default News;
